@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "1fe9e6df-5e31-48bc-85a8-01391556e9d7",
+		"name": "jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registration Api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "nasrullah",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "nasr@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "default"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login Api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "nasrq@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "default"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout Api",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTY4NTgyMzUwMiwiZXhwIjoxNjg1ODI3MTAyLCJuYmYiOjE2ODU4MjM1MDIsImp0aSI6IlpwNXh6SHhUZ0ZsNEhoWHciLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.UPLHNPT96g1jDzNza0vCfGh_48fDkAvB7isq8hrsUAU\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products Api",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 6|whWBVOuZUwCablTE1UqhktqLIsBiMJc9IJe2bC3T",
+						"type": "default"
+					}
+				],
+				"url": "http://127.0.0.1:8000/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product Api",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 6|whWBVOuZUwCablTE1UqhktqLIsBiMJc9IJe2bC3T",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "name one product",
+							"type": "default"
+						},
+						{
+							"key": "sku",
+							"value": "sku 1",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "price",
+							"value": "322",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "33",
+							"type": "default"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Single Product Api",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 6|whWBVOuZUwCablTE1UqhktqLIsBiMJc9IJe2bC3T",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"type": "default"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/products/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 6|whWBVOuZUwCablTE1UqhktqLIsBiMJc9IJe2bC3T",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "update",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "sku",
+							"value": "hgt4",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "price",
+							"value": "999",
+							"type": "default",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/1?title=fff&description=2w2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"1"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "fff"
+						},
+						{
+							"key": "description",
+							"value": "2w2"
+						},
+						{
+							"key": "price",
+							"value": "222",
+							"disabled": true
+						},
+						{
+							"key": "quantity",
+							"value": "222222",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 6|whWBVOuZUwCablTE1UqhktqLIsBiMJc9IJe2bC3T",
+						"type": "default"
+					}
+				],
+				"url": "http://127.0.0.1:8000/api/products/1"
+			},
+			"response": []
+		}
+	]
+}
